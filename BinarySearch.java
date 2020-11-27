@@ -3,7 +3,7 @@ public class BinarySearch {
         int start = 0;
         int end = arr.length-1;
         int mid = Math.round((start+end)/2);
-        while (start<end){
+        while (start<=end){
             if (target>arr[mid]){
                 start=mid+1;
             }
