@@ -2,6 +2,14 @@ import java.util.Set;
 import java.util.HashSet;
 
 class MissingNumber {
+    public static int missingNumber(int[] nums){
+       int res = 0;
+        for (int i = 0; i < nums.length; i++) {
+            res ^= (i ^ nums[i]);
+        }
+        res ^= nums.length;
+        return res;
+    }
     private static int helper(int[] nums) {
         int sum = (0 + nums.length) * (nums.length + 1) / 2;
         int total = 0;
