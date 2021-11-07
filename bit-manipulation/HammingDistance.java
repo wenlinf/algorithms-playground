@@ -9,6 +9,18 @@ class HammingDistance {
         }
         return res;
     }
+    
+    public static int hammingDistance2(int a, int b) {
+        int xor = a ^ b;
+        int res = 0;
+        while (xor != 0) {
+            if ((xor & 1) == 1) {
+                res++;
+            }
+            xor >>= 1;
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
         int a = 1;
