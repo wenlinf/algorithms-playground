@@ -1,5 +1,5 @@
 def permutations(str):
-  # your code goes here
+  # Time complexity: O(n!)
   res = []
   if len(str) == 0:
     return [""]
