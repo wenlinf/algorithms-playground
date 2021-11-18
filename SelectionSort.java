@@ -1,26 +1,31 @@
 public class SelectionSort {
-    static int[] selectionSort(int[] arr){
-        for (int i = 0; i <arr.length; i++) {
-            int first = arr[i];
-            int lowestIndex = i;
-            for (int j = i+1; j <arr.length; j++) {
-                if (arr[j]<arr[lowestIndex]){
-                    lowestIndex=j;
+    public static int[] selectionSort(int[] arr) {
+        int min;
+        int minIndex;
+        int temp;
+        for (int i = 0; i < arr.length - 1; i++) {
+            min = arr[i];
+            minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < min) {
+                    min = arr[j];
+                    minIndex = j;
                 }
-                if (j==arr.length-1&&lowestIndex!=i){
-                    int temp = arr[lowestIndex];
-                    arr[lowestIndex] = arr[i];
-                    arr[i] = temp;
-                }
+            }
+            if (minIndex != i) {
+                temp = arr[i];
+                arr[i] = min;
+                arr[minIndex] = temp;
             }
         }
         return arr;
     }
 
+
     public static void main(String[] args) {
-        int[] sorted = selectionSort(new int[]{1, 6, 4, 8, 3, 9, 7});
-        for (int i = 0; i <sorted.length ; i++) {
-            System.out.println(sorted[i]);
+        int[] ints = selectionSort(new int[]{3, 2, 6, 5, 7, 6, 9, 2, 4, 1});
+        for (int i = 0; i < ints.length; i++) {
+            System.out.println(ints[i]);
         }
     }
 }
